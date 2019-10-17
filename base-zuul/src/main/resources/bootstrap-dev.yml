@@ -1,0 +1,26 @@
+server:
+  port: 8082
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}-${spring.cloud.client.ipaddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://zlf:123456@localhost:8081/eureka/
+spring:
+  cloud:
+    config:
+      name: time
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: base-config
+zuul:
+  routes:
+    user-center:
+      path: /user/**
+      service_id: user-center
+      strip-prefix: false
+    base-config:
+      path: /config/**
+      service_id: base-config
