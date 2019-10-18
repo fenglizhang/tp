@@ -15,6 +15,7 @@ spring:
       discovery:
         enabled: true
         service-id: base-config
+      uri: http://localhost:8083
 zuul:
   routes:
     user-center:
