@@ -6,7 +6,7 @@
         SELECT
             *
         FROM
-            sys_user
+            sys_user_basic_info
         WHERE mobile =#{mobile} and user_type=#{userType}
     </select>
 

@@ -10,11 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
  * bus消息暴露接口供git服务调用，刷新配置信息
  */
 @RestController
-@RequestMapping("/actuator")
 public class RefreshController {
     private final static Logger LOGGER = LoggerFactory.getLogger(RefreshController.class);
 
-    @PostMapping("/autoRefresh")
+    @PostMapping("/actuator/autoRefresh")
     @ResponseBody
     public Object busRefresh2(@RequestBody(required = false) String param) {
         LOGGER.info("auto refresh start:param={}", param);

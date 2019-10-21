@@ -12,6 +12,7 @@ public class User implements Serializable {
     private String mobile;
     private String createTime;
     private String userType;
+    private String updateTime;
 
     public String getId() {
         return id;
@@ -59,5 +60,13 @@ public class User implements Serializable {
 
     public void setUserType(String userType) {
         this.userType = userType;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 }

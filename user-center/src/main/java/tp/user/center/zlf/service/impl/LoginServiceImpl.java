@@ -1,5 +1,6 @@
 package tp.user.center.zlf.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,9 @@ public class LoginServiceImpl implements LoginService {
     @Override
     public boolean queryUserByMobileAndType(String mobile, String userType) {
         LOGGER.info("queryUserByMobileAndType方法入参mobile：{},userType:{}", mobile, userType);
-        User userByMobileAndType = loginMapper.getUserByMobileAndType(mobile, userType);
-        if (userByMobileAndType != null) {
+        User user = loginMapper.getUserByMobileAndType(mobile, userType);
+        LOGGER.info(JSONObject.toJSONString(user));
+        if (user != null) {
             return true;
         }
         return false;

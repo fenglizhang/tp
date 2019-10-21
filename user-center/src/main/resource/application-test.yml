@@ -1,9 +1,0 @@
-server:
-  port: 8090
-eureka:
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}-${spring.cloud.client.ipaddress}:${server.port}
-  client:
-    serviceUrl:
-      defaultZone: http://zlf:123456@localhost:8081/eureka/
