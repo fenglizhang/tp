@@ -21,6 +21,7 @@
         <module>base-zuul</module>
         <module>base-config</module>
         <module>user-center</module>
+        <module>task-center</module>
     </modules>
 
     <properties>

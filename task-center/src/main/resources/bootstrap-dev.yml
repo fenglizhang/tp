@@ -1,0 +1,17 @@
+server:
+  port: 8091
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}-${spring.cloud.client.ipaddress}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://zlf:123456@localhost:8081/eureka/
+spring:
+  cloud:
+    config:
+      name: mysql
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: base-config
