@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
+ * @author zhanglifeng
  * @Description Quartz调度配置类
  */
 @Configuration

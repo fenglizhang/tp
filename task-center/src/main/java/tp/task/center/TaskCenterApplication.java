@@ -6,6 +6,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
+/**
+ * @author zhanglifeng
+ * @date 2019-11-13
+ */
 @EnableFeignClients
 @SpringBootApplication
 public class TaskCenterApplication extends SpringBootServletInitializer {

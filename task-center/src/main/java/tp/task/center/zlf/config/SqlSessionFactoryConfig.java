@@ -13,6 +13,11 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 
+/**
+ * [结果集转实体驼峰设置]
+ * @author zhanglifeng
+ * @date 2019-11-13
+ */
 @Configuration
 public class SqlSessionFactoryConfig implements TransactionManagementConfigurer {
     @Resource
@@ -23,7 +28,9 @@ public class SqlSessionFactoryConfig implements TransactionManagementConfigurer 
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
+        //指定资源文件路径
         bean.setMapperLocations(resolver.getResources("classpath:mapper/**/*.xml"));
+        //下划线转驼峰设置
         bean.getObject().getConfiguration().setMapUnderscoreToCamelCase(true);
         return bean.getObject();
     }
